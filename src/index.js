@@ -1,4 +1,4 @@
-import { Sidebar } from "../../lib/sidebar.js";
+import { Sidebar } from "./components/sidebar.js";
 
 (function () {
     // Sidebar code
@@ -14,6 +14,7 @@ import { Sidebar } from "../../lib/sidebar.js";
         document.getElementById('sidebar__close_btn')
     ];
     sidebarBtns.forEach(b => b.addEventListener('click', function (e) {
+        console.log(`btn clicked ${e.target.id}`);
         const isOpen = sidebar.isOpen();
         isOpen ? sidebar.close() : sidebar.open();
         isOpen ?
