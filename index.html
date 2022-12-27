@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Messenger</title>
+	<link rel="stylesheet" href="./public/css/style.css">
+</head>
+
+<body>
+
+	<div id="root">
+
+		<button id="sidebar__open_btn">Open Sidebar</button>
+
+		<Sidebar id="test-sidebar" class="sidebar">
+			<SidebarContent class="sidebar__content">
+				<button id="sidebar__close_btn">Close</button>
+			</SidebarContent>
+			<SidebarContentResize class="sidebar__resize"></SidebarContentResize>
+			<SidebarBody class="sidebar__body"></SidebarBody>
+		</Sidebar>
+
+	</div>
+
+	<script type="module" src="./public/js/main.js"></script>
+</body>
+
+</html>

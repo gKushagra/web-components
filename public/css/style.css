@@ -1,0 +1,34 @@
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+.root {
+  width: 100% !important;
+  height: 100vh !important;
+}
+
+.sidebar {
+  position: relative;
+}
+
+.sidebar__content {
+  background-color: whitesmoke;
+  z-index: 0;
+}
+
+.sidebar__resize {
+  width: 0px !important;
+  height: 100vh !important;
+  border: 1px solid black !important;
+}
+.sidebar__resize:hover {
+    cursor: pointer;
+}
+
+.sidebar__body {
+  background-color: transparent;
+  z-index: 2;
+}
