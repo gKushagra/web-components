@@ -2,7 +2,7 @@
   "scripts": {
     "debug": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js",
-    "build": "uglifyjs src/components/index.js -o index.js -c -m --source-map 'root='https://cdn.jsdelivr.net/gh/gKushagra/web-components/dist',url='index.js.map''"
+    "build": "uglifyjs src/components/index.js -c -m -o dist/index.js"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
@@ -10,7 +10,7 @@
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "terser-webpack-plugin": "^5.3.6",
-    "uglifyjs": "^2.4.11",
+    "uglify-js": "^3.17.4",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
   }
