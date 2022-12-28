@@ -3,10 +3,15 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     mode: 'production',
-    entry: './src/components/index.js',
+    entry: {
+        'web-components': [
+            './src/components/index.js',
+            './src/components/sidebar.js'
+        ]
+    },
     output: {
+        path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
-        path: path.resolve(__dirname, 'dist')
     },
     plugins: [
         new CleanWebpackPlugin(),
