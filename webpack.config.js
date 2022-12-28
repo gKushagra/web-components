@@ -1,30 +1,25 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const isDevelopment = process.env.NODE_ENV !== 'production';
+const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    mode: isDevelopment ? 'development' : 'production',
+    mode: 'production',
+    entry: './src/components/index.js',
     output: {
-        filename: isDevelopment ? '[name].js' : '[name].[hash].js'
+        filename: '[name].js',
+        path: path.resolve(__dirname, 'dist')
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
-            filename: './index.html'
-        })
     ],
     module: {
         rules: [
             {
-                test: /\.html$/,
-                use: [
-                    {
-                        loader: 'html-loader',
-                        options: { minimize: !isDevelopment }
-                    }
-                ]
-            }
+                test: /\.(js)$/,
+                exclude: /[\\/]node_modules[\\/]/,
+                use: {
+                    loader: 'babel-loader',
+                },
+            },
         ]
     }
-}
+};
