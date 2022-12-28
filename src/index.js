@@ -1,4 +1,4 @@
-import { Sidebar } from "./components/index.js";
+import { Sidebar } from "sf-web-components";
 
 (function () {
     // Sidebar code
