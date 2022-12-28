@@ -1,4 +1,4 @@
-import { Sidebar } from "./components/sidebar.js";
+// import { Sidebar } from "./components/sidebar.js";
 
 (function () {
     // Sidebar code
