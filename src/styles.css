@@ -22,7 +22,7 @@ body {
 .sidebar__resize {
   width: 0px !important;
   height: 100vh !important;
-  border: 1px solid black !important;
+  border: 1.5px solid gainsboro !important;
 }
 .sidebar__resize:hover {
     cursor: pointer;

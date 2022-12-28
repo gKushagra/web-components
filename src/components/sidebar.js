@@ -20,9 +20,13 @@ export class Sidebar {
         sidebarBody.style.height = `${_.height}${_.heightUnit}`;
         sidebarBody.style.width = `${100 - _.width}${_.widthUnit}`;
 
-        this.el.addEventListener('mousedown', function mousedownEvent(e) {
-            console.log(e.clientX);
-            const sidebarBodyId = e.target.id;
+        const sidebarContentResize = this.el.querySelector('SidebarContentResize');
+        sidebarContentResize.id = `${_.id}&content_resize`;
+
+        sidebarContentResize.addEventListener('click', function dividerClickEvent(e) {
+            // const sidebarBodyId = e.target.id;
+            const sidebarBodyId = e.target.id?.split('&')[0];
+            document.body.style.cursor = 'col-resize';
             if (sidebarBodyId) {
                 const sidebarId = sidebarBodyId.split('&')[0];
                 const sidebarEl = document.getElementById(sidebarId);
@@ -35,11 +39,36 @@ export class Sidebar {
                     if (sidebarBodyId) {
                         const sidebarId = sidebarBodyId.split('&')[0];
                         const sidebarEl = document.getElementById(sidebarId);
+                        document.body.style.cursor = 'default';
                         sidebarEl.removeEventListener('mouseup', mouseupEvent);
                     }
                 });
             }
+            setTimeout(() => {
+                document.body.style.cursor = 'default';
+            }, 5000);
         });
+
+        // this.el.addEventListener('mousedown', function mousedownEvent(e) {
+        //     console.log(e.clientX);
+        //     const sidebarBodyId = e.target.id;
+        //     if (sidebarBodyId) {
+        //         const sidebarId = sidebarBodyId.split('&')[0];
+        //         const sidebarEl = document.getElementById(sidebarId);
+        //         sidebarEl.addEventListener('mouseup', function mouseupEvent(e) {
+        //             console.log(e.clientX);
+        //             const pixelToViewWidth = (100 * e.clientX / window.innerWidth);
+        //             sidebarContent.style.width = `${pixelToViewWidth}${_.widthUnit}`;
+        //             sidebarBody.style.width = `${100 - pixelToViewWidth}${_.widthUnit}`;
+        //             const sidebarBodyId = e.target.id;
+        //             if (sidebarBodyId) {
+        //                 const sidebarId = sidebarBodyId.split('&')[0];
+        //                 const sidebarEl = document.getElementById(sidebarId);
+        //                 sidebarEl.removeEventListener('mouseup', mouseupEvent);
+        //             }
+        //         });
+        //     }
+        // });
 
         // sidebarBody.addEventListener('click', function (e) {
         //     const sidebarBodyId = e.target.id;
