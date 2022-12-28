@@ -2,15 +2,15 @@
   "scripts": {
     "debug": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js",
-    "build": "parcel build src/components/index.js"
+    "build": "uglifyjs src/components/index.js -c -m -o dist/index.js"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "cross-env": "^7.0.3",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
-    "parcel-bundler": "^1.12.5",
     "terser-webpack-plugin": "^5.3.6",
+    "uglify-js": "^3.17.4",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
   }
