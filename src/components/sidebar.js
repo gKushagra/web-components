@@ -1,4 +1,4 @@
-export class Sidebar {
+class Sidebar {
 
     el;
 

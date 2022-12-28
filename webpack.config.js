@@ -1,8 +1,12 @@
 module.exports = {
     "mode": "none",
-    "entry": "./src/components/index.js",
+    "entry": {
+        main: [
+            "./src/components/sidebar.js",
+        ]
+    },
     "output": {
         "path": __dirname + '/dist',
-        "filename": "main.js"
+        "filename": "[name].js"
     }
 };
